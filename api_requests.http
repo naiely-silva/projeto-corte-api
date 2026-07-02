@@ -1,0 +1,31 @@
+### Health Check
+GET http://127.0.0.1:8000/health
+
+###
+
+### Otimização
+POST http://127.0.0.1:8000/otimizar
+Content-Type: application/json
+X-API-Key: ufc2026_otimizacao
+
+{
+  "comprimento_padrao": 3000,
+  "time_limit": 60,
+  "itens": [
+    {
+      "id": "item_A",
+      "comprimento": 1150,
+      "quantidade": 3
+    },
+    {
+      "id": "item_B",
+      "comprimento": 800,
+      "quantidade": 4
+    },
+    {
+      "id": "item_C",
+      "comprimento": 450,
+      "quantidade": 5
+    }
+  ]
+}
