@@ -4,11 +4,10 @@ Projeto Final da disciplina **Laboratório de Otimização** – Universidade Fe
 
 ---
 
-## 🚀 Deploy
+## Deploy
 
-API publicada no Render:
-
-https://projeto-corte-api.onrender.com/docs
+API: https://projeto-corte-api.onrender.com  
+Swagger: https://projeto-corte-api.onrender.com/docs
 
 # Descrição
 
@@ -143,7 +142,7 @@ Resposta:
 
 ```json
 {
-  "status": "online"
+  "status": "ok"
 }
 ```
 
