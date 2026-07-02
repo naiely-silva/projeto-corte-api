@@ -31,20 +31,20 @@ quantidade de barras padrão cortadas.
 ## Conjuntos e índices
 
 
-$$i \in \{1, \dots, m\} \quad \text{índice dos itens}$$
+$$i \in \{1, \dots, m\}: \quad \text{índice dos itens}$$
 
-$$j \in \{1, \dots, N\} \quad \text{índice das barras}$$
+$$j \in \{1, \dots, N\}: \quad \text{índice das barras}$$
 
 
 Onde $N$ é um limite superior do número de barras necessárias.
 
 ## Parâmetros
 
-$$L = \text{comprimento da barra padrão}$$
+$$L : \text{comprimento da barra padrão}$$
 
-$$l_i = \text{comprimento do item } i$$
+$$l_i : \text{comprimento do item } i$$
 
-$$d_i = \text{demanda do item } i$$
+$$d_i : \text{demanda do item } i$$
 
 ## Variáveis de decisão
 
@@ -58,14 +58,15 @@ $$\min \sum_{j=1}^{N} y_j$$
 
 ## Restrições
 
-- Atender toda a demanda dos itens:
+Atendimento da demanda:
 
 $\sum_{j=1}^{N} x_{ij} = d_i, \quad \forall i = 1, \dots, m$
 
-- Não ultrapassar o comprimento de cada barra:
+Limite de comprimento:
 
 $\sum_{i=1}^{m} l_i x_{ij} \leq L \cdot y_j, \quad \forall j = 1, \dots, N$
-- Utilizar apenas quantidades inteiras:
+
+Domínio das variáveis:
 
 $x_{ij} \in \mathbb{Z}_{\ge 0}, \quad y_j \in \{0,1\}$
 
