@@ -17,29 +17,57 @@ O objetivo é minimizar a quantidade de barras utilizadas para atender toda a de
 
 ---
 
-# Funcionalidades
+# Cenário de Negócio
 
-- Resolver o Problema de Corte Unidimensional
-- Minimizar a quantidade de barras utilizadas
-- Gerar plano de corte
-- Informar o desperdício total
-- Documentação automática com Swagger
-- Autenticação por API Key
-- Testes automatizados com Pytest
+Uma empresa possui barras padrão de comprimento útil $L$ (ex: barras de aço de 6m) e deve
+produzir itens menores com comprimentos $li$ em quantidades especificadas pela demanda
+$di$. O objetivo é planejar os padrões de corte para satisfazer a demanda minimizando a
+quantidade de barras padrão cortadas.
 
 ---
 
 # Modelo Matemático
 
-## Função Objetivo
+## Conjuntos e índices
 
-Minimizar o número de barras utilizadas.
+
+$$i \in \{1, \dots, m\} \quad \text{índice dos itens}$$
+
+$$j \in \{1, \dots, N\} \quad \text{índice das barras}$$
+
+
+Onde $N$ é um limite superior do número de barras necessárias.
+
+## Parâmetros
+
+$$L = \text{comprimento da barra padrão}$$
+
+$$l_i = \text{comprimento do item } i$$
+
+$$d_i = \text{demanda do item } i$$
+
+## Variáveis de decisão
+
+$$y_j \in \{0,1\}, \quad \forall j$$
+
+$$x_{ij} \in \mathbb{Z}_{\ge 0}, \quad \forall i,j$$
+
+## Função objetivo
+
+$$\min \sum_{j=1}^{N} y_j$$
 
 ## Restrições
 
-- Atender toda a demanda dos itens;
-- Não ultrapassar o comprimento de cada barra;
-- Utilizar apenas quantidades inteiras.
+- Atender toda a demanda dos itens:
+
+$\sum_{j=1}^{N} x_{ij} = d_i, \quad \forall i = 1, \dots, m$
+
+- Não ultrapassar o comprimento de cada barra:
+
+$\sum_{i=1}^{m} l_i x_{ij} \leq L \cdot y_j, \quad \forall j = 1, \dots, N$
+- Utilizar apenas quantidades inteiras:
+
+$x_{ij} \in \mathbb{Z}_{\ge 0}, \quad y_j \in \{0,1\}$
 
 ---
 
