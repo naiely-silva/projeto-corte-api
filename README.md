@@ -4,6 +4,12 @@ Projeto Final da disciplina **Laboratório de Otimização** – Universidade Fe
 
 ---
 
+## 🚀 Deploy
+
+API publicada no Render:
+
+https://projeto-corte-api.onrender.com/docs
+
 # Descrição
 
 Esta API resolve o **Problema de Corte Unidimensional (Cutting Stock Problem)** utilizando **Programação Inteira** com o **Google OR-Tools**.
